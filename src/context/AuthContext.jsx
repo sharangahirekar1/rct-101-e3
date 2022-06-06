@@ -3,5 +3,6 @@ import React, { createContext } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  return <AuthContext.Provider>{children}</AuthContext.Provider>;
+  let [isAuth,setIsAuth] = React.useState(false);
+  return <AuthContext.Provider value={{isAuth,setIsAuth}}>{children}</AuthContext.Provider>;
 };
